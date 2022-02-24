@@ -5,9 +5,9 @@ let ammount = []
 let expense = 0
 let income = 0
 const list = document.getElementById('list')
-if(data == null)
+if(localData == null)
 {
-console.log('data is not present')
+   console.log('data is not present')
 }
 else{
     data =  localStorage.getItem('keys').split(',')
@@ -16,7 +16,7 @@ else{
        let amt = parseInt(value)
        ammount.push(amt)
        let li = document.createElement('li')
-       li.setAttribute('class','plus')
+     amt>0?li.setAttribute('class','plus'):li.setAttribute('class','minus')
        li.innerHTML = key +"   " +value
        list.appendChild(li)
     })
